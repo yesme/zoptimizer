@@ -1,9 +1,9 @@
-#ifndef BASE_ALGO_HASH_H_
-#define BASE_ALGO_HASH_H_
+#ifndef SRC_BASE_ALGO_HASH_H_
+#define SRC_BASE_ALGO_HASH_H_
 
 #include <cstdint>
 
-namespace zoptimizer_base {
+namespace zopt_base {
 
 // Given a key and the number of the buckets, return which bucket should this
 // key belongs to. This algorithm is invented by Google:
@@ -22,4 +22,4 @@ inline std::int32_t JumpConsistentHash(std::uint64_t key, std::int32_t num_bucke
 
 }
 
-#endif  // BASE_ALGO_HASH_H_
+#endif  // SRC_BASE_ALGO_HASH_H_
