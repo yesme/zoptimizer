@@ -13,9 +13,9 @@ inline std::int32_t JumpConsistentHash(std::uint64_t key, std::int32_t num_bucke
   std::int64_t b = -1, j = 0;
   while (j < num_buckets) {
     b = j;
-    key = key * 2862933555777941757ULL + 1;
-    // double(...) here serves as a determined rand generator
-    j = (b + 1) * (double(1LL << 31) / double((key >> 33) + 1));
+    // determined pseudo rand generator
+    key = key * 2862933555777941757ULL + 1;  // srand(key)
+    j = (b + 1) * (double(1LL << 31) / double((key >> 33) + 1));  // rand()
   }
   return b;
 }
